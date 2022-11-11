@@ -1,0 +1,6 @@
+Du an dap ung yeu cau ve tinh thong suot
+Tong chi phi noi toi thieu: 24
+2 4 3
+4 5 4
+3 4 5
+1 5 12

@@ -27,7 +27,6 @@ string isSymmetric(int arr[][100], int n)
 
 int main() {
 	// Cau 1, 2, 3, 4
-    // File input.txt trong folder cmake-build-debug
     ifstream ifs("input.txt");
     ifs >> n;
     for (int i = 0; i < n; i++) {

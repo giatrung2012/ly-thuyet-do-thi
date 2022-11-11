@@ -4,7 +4,6 @@ using namespace std;
 
 int main() {
     // Cau 5
-    // File input.txt trong folder cmake-build-debug
     ifstream ifs("input.txt");
     int arr[100][100], n, cnt = 0, b[100], c[100], k = 0;
     ifs >> n;
