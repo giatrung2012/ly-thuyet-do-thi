@@ -59,26 +59,33 @@ bool cmp(edge a, edge b) {
 
 void kruskal() {
     vector<edge> mst;
+    vector<edge> removed;
     int d = 0;
     sort(canh.begin(), canh.end(), cmp);
     for (int i = 0; i < m; i++) {
-        if (mst.size() == n - 1) {
-            break;
-        }
         edge e = canh[i];
         if (Union(e.u, e.v)) {
             mst.push_back(e);
             d += e.w;
+        } else {
+            removed.push_back(e);
         }
     }
     if (mst.size() != n - 1) {
         ofs << "Du an khong dap ung yeu cau ve tinh thong suot" << endl;
     } else {
-        ofs << "Du an dap ung yeu cau ve tinh thong suot" << endl;
-        ofs << "Tong chi phi noi toi thieu: " << d << endl;
+        ofs << "Du an dap ung yeu cau ve tinh thong suot" << endl << endl;
+        ofs << "Cac duong noi bi loai bo:" << endl;
+        for (auto it : removed) {
+            ofs << it.u << " " << it.v << " " << it.w << endl;
+        }
+        ofs << endl;
+        ofs << "Cac duong noi con lai:" << endl;
         for (auto it : mst) {
             ofs << it.u << " " << it.v << " " << it.w << endl;
         }
+        ofs << endl;
+        ofs << "Tong chi phi noi toi thieu: " << d << endl;
     }
     cout << "Da xuat ket qua ra file output.txt" << endl;
 }
